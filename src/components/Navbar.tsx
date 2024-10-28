@@ -37,45 +37,13 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="text-xl font-semibold">
           <Link to="/" className="text-indigo-600">
-            <img src={Logo} width={180} />
+            <img src={Logo} width={200} />
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 items-center text-black">
-          {navLinks.map((link) =>
-            link.dropdown ? (
-              <div key={link.name} className="relative group">
-                <Link
-                  to="#"
-                  className="hover:text-indigo-600 uppercase text-sm font-medium"
-                >
-                  {link.name}
-                </Link>
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
-                  {link.dropdown.map((dropdownLink) => (
-                    <Link
-                      key={dropdownLink.name}
-                      to={dropdownLink.path}
-                      className="block px-4 py-2 text-gray-600 hover:bg-indigo-600 hover:text-white"
-                    >
-                      {dropdownLink.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="font-medium uppercase text-sm hover:text-indigo-600"
-              >
-                {link.name}
-              </Link>
-            )
-          )}
-
-          {/* Social Icons */}
+        <div className="hidden md:flex flex-col space-x-6 items-center text-black">
+          {/* social */}
           <div className="flex space-x-4">
             <a
               href="https://twitter.com"
@@ -83,7 +51,7 @@ const Navbar: React.FC = () => {
               rel="noopener noreferrer"
             >
               <Icon
-                icon={"twitterIcon"}
+                icon={"ri:twitter-x-line"}
                 className="text-gray-700 hover:text-indigo-600"
               />
             </a>
@@ -108,6 +76,41 @@ const Navbar: React.FC = () => {
               />
             </a>
           </div>
+          <div>
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <div key={link.name} className="relative group">
+                  <Link
+                    to="#"
+                    className="hover:text-indigo-600 uppercase text-sm font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                  <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
+                    {link.dropdown.map((dropdownLink) => (
+                      <Link
+                        key={dropdownLink.name}
+                        to={dropdownLink.path}
+                        className="block px-4 py-2 text-gray-600 hover:bg-indigo-600 hover:text-white"
+                      >
+                        {dropdownLink.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="font-medium uppercase text-sm hover:text-indigo-600"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
+          </div>
+
+          {/* Social Icons */}
         </div>
 
         {/* Mobile Menu Icon */}
