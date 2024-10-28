@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
       {/* Background Images with Overlay */}
       {slides.map((slide, index) => (
         <div
@@ -54,21 +54,23 @@ const Hero: React.FC = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
           {/* Overlay */}
         </div>
       ))}
 
       {/* Hero Content */}
       <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-32 text-left text-white">
-        <div className="max-w-lg">
+        <div className="w-full md:max-w-3xl">
           <h1 className="text-5xl font-bold mb-4">
             {slides[currentIndex].title}
           </h1>
-          <p className="text-lg mb-8">{slides[currentIndex].description}</p>
+          <p className="text-lg mb-12 font-semibold">
+            {slides[currentIndex].description}
+          </p>
           <a
             href={slides[currentIndex].buttonUrl}
-            className="border border-white hover:bg-white hover:text-black text-white font-semibold py-2 px-6 rounded-md transition duration-200"
+            className="border-2 border-primary hover:bg-primary text-white font-semibold py-[10px] px-6 rounded transition duration-200 uppercase text-xs"
           >
             Read More
           </a>

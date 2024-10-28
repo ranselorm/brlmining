@@ -6,7 +6,7 @@ import Hero from "./Hero";
 const LayoutContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => (
-  <div className="w-full mx-auto px-4 sm:px-6 md:px-32 bg-white">
+  <div className="w-full mx-auto px-4 sm:px-4 md:px-32 bg-white">
     {children}
   </div>
 );
@@ -22,7 +22,7 @@ const FooterLayout: React.FC<{ children: React.ReactNode }> = ({
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div>
-      <header className="border-t-[10px] border-yellow-800 text-white font-sans">
+      <header className="border-t-[10px] border-yellow-800 text-white font-sans sticky top-0 z-50 bg-white">
         <Navbar />
         {/* <LayoutContainer>
           <p>k</p>

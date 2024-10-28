@@ -8,7 +8,7 @@ export default {
         sans: ["Raleway", "sans-serif"], // Set Raleway as default sans font
       },
       colors: {
-        primary: "#854d0e",
+        primary: "#79523a",
         secondary: "#f5c700",
         accent: "#16efd2",
       },
