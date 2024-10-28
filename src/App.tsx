@@ -1,7 +1,10 @@
+import Hero from "./components/Hero";
+import Layout from "./components/Layout";
+
 function App() {
   return (
     <>
-      <div className="bg-red-400">hello</div>
+      <Layout>j</Layout>
     </>
   );
 }
