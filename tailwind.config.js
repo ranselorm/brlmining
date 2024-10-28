@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ["Aeonik", "sans-serif"],
-        sans: ["Raleway", "sans-serif"], // Set Raleway as default sans font
+        primary: ["Montserrat", "sans-serif"], // Set Raleway as default sans font
       },
       colors: {
         primary: "#79523a",

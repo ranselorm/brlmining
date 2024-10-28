@@ -3,7 +3,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section className="flex flex-col gap-4 md:gap-12 lg:flex-row items-center justify-center py-16 px-4">
+    <section className="flex flex-col gap-4 md:gap-12 lg:flex-row items-center justify-center py-16 w-full mx-auto px-4 sm:px-4 md:px-32">
       <div className="w-full lg:w-1/2 h-[370px] flex justify-center lg:justify-end mb-8 lg:mb-0">
         <img
           src="/images/hero2.jpg"
