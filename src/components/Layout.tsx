@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 const LayoutContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -20,21 +20,11 @@ const FooterLayout: React.FC<{ children: React.ReactNode }> = ({
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div>
-      <header className="">
-        <Navbar />
-        {/* <LayoutContainer>
-          <p>k</p>
-        </LayoutContainer> */}
-      </header>
+    <>
+      <Navbar />
       <main className="w-full">{children}</main>
-      <footer>
-        <FooterLayout>
-          {/* <Footer /> */}
-          <p>footer</p>
-        </FooterLayout>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
 };
 

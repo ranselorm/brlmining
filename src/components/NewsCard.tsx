@@ -15,7 +15,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
   iconUrl,
 }) => {
   return (
-    <div className="bg-white rounded shadow overflow-hidden md:w-2/6 h-[380px]">
+    <div className="bg-white rounded shadow-lg overflow-hidden md:w-2/6 h-[380px]">
       {/* Icon Section */}
       <div
         className={`${

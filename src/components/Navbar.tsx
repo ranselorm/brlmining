@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import Logo from "../assets/icons/logo.svg";
+import Socials from "./Socials";
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -52,46 +53,13 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-gray py-2 font-primary">
       <div className="w-full mx-auto px-4 sm:px-6 md:px-24 py-3 flex justify-between items-center">
-        {/* Logo */}
         <Link to="/">
           <img src={Logo} width={200} alt="Logo" />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-col items-end space-y-2">
-          {/* Social Icons */}
-          <div className="flex space-x-4 flex-end">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                icon={"ri:twitter-x-line"}
-                className="text-primary text-lg"
-              />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                icon={"line-md:linkedin"}
-                className="text-primary text-lg"
-              />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                icon={"line-md:facebook"}
-                className="text-primary text-lg"
-              />
-            </a>
-          </div>
+          <Socials />
 
           {/* Navigation Links */}
           <div className="flex flex-row space-x-5 text-black">
