@@ -10,6 +10,7 @@ export default {
       },
       colors: {
         primary: "#302c6c",
+        secondary: "#5b499e",
         gray: "#f2f2f2",
         accent: "#212135",
       },
