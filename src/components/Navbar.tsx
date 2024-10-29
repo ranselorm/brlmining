@@ -1,5 +1,5 @@
 // src/components/Navbar.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import Logo from "../assets/icons/logo.svg";
@@ -31,20 +31,36 @@ const Navbar: React.FC = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Close menu on clicking outside the sidebar
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (mobileMenuOpen && target.classList.contains("overlay")) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [mobileMenuOpen]);
+
   return (
-    <nav className="bg-gray-100 py-2 font-primary">
+    <nav className="bg-gray py-2 font-primary">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-xl font-semibold">
-          <Link to="/" className="text-indigo-600">
-            <img src={Logo} width={200} />
-          </Link>
-        </div>
+        <Link to="/">
+          <img src={Logo} width={200} alt="Logo" />
+        </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex flex-col space-x-6 items-center text-black">
-          {/* social */}
-          <div className="flex space-x-4">
+        <div className="hidden md:flex flex-col items-end space-y-2">
+          {/* Social Icons */}
+          <div className="flex space-x-4 flex-end">
             <a
               href="https://twitter.com"
               target="_blank"
@@ -52,7 +68,7 @@ const Navbar: React.FC = () => {
             >
               <Icon
                 icon={"ri:twitter-x-line"}
-                className="text-gray-700 hover:text-indigo-600"
+                className="text-primary text-lg"
               />
             </a>
             <a
@@ -61,8 +77,8 @@ const Navbar: React.FC = () => {
               rel="noopener noreferrer"
             >
               <Icon
-                icon={"linkedinIcon"}
-                className="text-gray-700 hover:text-indigo-600"
+                icon={"line-md:linkedin"}
+                className="text-primary text-lg"
               />
             </a>
             <a
@@ -71,12 +87,14 @@ const Navbar: React.FC = () => {
               rel="noopener noreferrer"
             >
               <Icon
-                icon={"facebookIcon"}
-                className="text-gray-700 hover:text-indigo-600"
+                icon={"line-md:facebook"}
+                className="text-primary text-lg"
               />
             </a>
           </div>
-          <div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-row space-x-5 text-black">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div key={link.name} className="relative group">
@@ -109,51 +127,76 @@ const Navbar: React.FC = () => {
               )
             )}
           </div>
-
-          {/* Social Icons */}
         </div>
 
         {/* Mobile Menu Icon */}
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-primary focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          <Icon icon={"menuIcon"} className="text-2xl" />
+          <Icon icon={"line-md:menu"} className="text-2xl" />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Full-Screen Menu with Overlay and Slide-In Effect */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          {navLinks.map((link) =>
-            link.dropdown ? (
-              <div key={link.name} className="border-b">
-                <p className="px-4 py-2 font-semibold text-gray-700">
-                  {link.name}
-                </p>
-                <div className="pl-4">
-                  {link.dropdown.map((dropdownLink) => (
-                    <Link
-                      key={dropdownLink.name}
-                      to={dropdownLink.path}
-                      className="block px-4 py-2 text-gray-600 hover:bg-indigo-600 hover:text-white"
-                    >
-                      {dropdownLink.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="block px-4 py-2 text-gray-700 hover:bg-indigo-600 hover:text-white border-b"
-              >
-                {link.name}
+        <>
+          {/* Overlay with Blur Effect */}
+          <div className="fixed inset-0 z-40 bg-black bg-opacity-70 backdrop-blur-md overlay" />
+
+          {/* Sidebar Menu */}
+          <div
+            className={`fixed top-0 right-0 z-50 h-full w-7/12 bg-black text-white p-5 transform transition-transform duration-300 ${
+              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            <div className="flex justify-between items-center mb-8">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                <img src={Logo} width={150} alt="Logo" className="text-white" />
               </Link>
-            )
-          )}
-        </div>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-white text-2xl"
+              >
+                <Icon icon={"line-md:close"} />
+              </button>
+            </div>
+
+            <div className="space-y-6">
+              {navLinks.map((link) =>
+                link.dropdown ? (
+                  <div
+                    key={link.name}
+                    className="pb-4 border-b border-gray-700"
+                  >
+                    <p className="font-semibold text-lg">{link.name}</p>
+                    <div className="pl-4 space-y-2 mt-2">
+                      {link.dropdown.map((dropdownLink) => (
+                        <Link
+                          key={dropdownLink.name}
+                          to={dropdownLink.path}
+                          className="block text-gray-400 hover:text-white"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {dropdownLink.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className="block font-semibold text-lg border-b border-gray-700 pb-4"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+        </>
       )}
     </nav>
   );

@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ["Montserrat", "sans-serif"], // Set Raleway as default sans font
+        primary: ["Montserrat", "sans-serif"],
+        sans: ["Nunito", "sans-serif"],
+        pop: ["Poppins", "sans-serif"],
       },
       colors: {
-        primary: "#79523a",
-        secondary: "#f5c700",
+        primary: "#302c6c",
+        gray: "#f2f2f2",
         accent: "#16efd2",
       },
       backgroundImage: {
