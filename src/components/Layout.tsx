@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 const LayoutContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => (
-  <div className="w-full mx-auto px-4 sm:px-4 md:px-32 bg-white">
+  <div className="w-full mx-auto px-4 sm:px-4 md:px-24 bg-white">
     {children}
   </div>
 );
@@ -13,7 +13,7 @@ const LayoutContainer: React.FC<{ children: React.ReactNode }> = ({
 const FooterLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => (
-  <div className="w-full mx-auto px-4 sm:px-6 md:px-32 py-4 md:py-10 footer">
+  <div className="w-full mx-auto px-4 sm:px-6 md:px-24 py-4 md:py-10 footer">
     {children}
   </div>
 );

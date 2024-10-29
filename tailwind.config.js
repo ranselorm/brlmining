@@ -11,7 +11,7 @@ export default {
       colors: {
         primary: "#302c6c",
         gray: "#f2f2f2",
-        accent: "#16efd2",
+        accent: "#212135",
       },
       backgroundImage: {
         "radial-custom":
