@@ -1,7 +1,6 @@
 // src/components/Footer.tsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
 import Socials from "./Socials";
 
 const Footer: React.FC = () => {

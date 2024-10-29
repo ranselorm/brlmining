@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({
       {/* Hero Content */}
       <div className="absolute inset-0 flex  items-center justify-start px-8 lg:px-24 text-left text-white">
         <div className="w-full md:max-w-3xl">
-          <h1 className="text-5xl font-bold uppercase leading-tight font-primary">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight font-primary">
             {title}
           </h1>
           {description && (

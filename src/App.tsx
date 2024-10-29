@@ -1,5 +1,3 @@
-import About from "./components/About";
-import Button from "./components/Button";
 import Hero from "./components/Hero";
 import Layout from "./components/Layout";
 import News from "./components/News";
