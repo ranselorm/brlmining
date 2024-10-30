@@ -1,5 +1,6 @@
 import FlexCard from "../components/FlexCard";
 import Hero from "../components/Hero";
+import News from "../components/News";
 
 const Projects = () => {
   return (
@@ -43,6 +44,7 @@ const Projects = () => {
           />
         </div>
       </div>
+      <News />
     </section>
   );
 };
