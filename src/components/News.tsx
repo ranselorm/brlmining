@@ -2,6 +2,7 @@
 import React from "react";
 import NewsCard from "./NewsCard";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const newsData = [
   {
@@ -39,9 +40,9 @@ const News: React.FC = () => {
           />
         ))}
       </div>
-      <div className="text-center">
+      <Link to="/newsroom" className="text-center">
         <Button text=" View All Newsroom Posts" />
-      </div>
+      </Link>
     </section>
   );
 };

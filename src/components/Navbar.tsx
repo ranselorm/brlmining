@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     {
       name: "Company",
+      path: "/about",
       dropdown: [
         { name: "About", path: "/about" },
         { name: "Management & Advisors", path: "/management" },
@@ -18,9 +19,10 @@ const Navbar: React.FC = () => {
     },
     {
       name: "Projects",
+      path: "/projects",
       dropdown: [
-        { name: "Summary", path: "/summary" },
-        { name: "Gold Standard", path: "/gold-standard" },
+        { name: "Summary", path: "/projects" },
+        { name: "Gold Standard", path: "/project/gold-standard" },
         { name: "Miminiska", path: "/miminiska" },
         { name: "Keezhik", path: "/keezhik" },
         { name: "Attwood", path: "/attwood" },
@@ -66,7 +68,10 @@ const Navbar: React.FC = () => {
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div key={link.name} className="relative group">
-                  <Link to="#" className="uppercase text-sm font-medium">
+                  <Link
+                    to={link.path}
+                    className="uppercase text-sm font-medium"
+                  >
                     {link.name}
                   </Link>
                   <div className="absolute top-full left-0 bg-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100 invisible group-hover:visible z-10 w-max font-medium">

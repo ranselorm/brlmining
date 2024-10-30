@@ -1,20 +1,26 @@
-import About from "./components/About";
-import Hero from "./components/Hero";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import AboutPage from "./pages/About";
 import Layout from "./components/Layout";
-import News from "./components/News";
+import InvestorCentre from "./pages/InvestorCentre";
+import NewsRoom from "./pages/NewsRoom";
+import Contact from "./pages/Contact";
+import GoldStandard from "./pages/GoldStandard";
 
 function App() {
   return (
     <>
       <Layout>
-        {/* <Hero
-          title="Exploring for Ontario’s next Gold Mine"
-          background="/images/hero1.jpg"
-          button={true}
-          mainPage={true}
-        />
-        <News /> */}
-        <About />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/project/gold-standard" element={<GoldStandard />} />
+          <Route path="/investor-centre" element={<InvestorCentre />} />
+          <Route path="/newsroom" element={<NewsRoom />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </Layout>
     </>
   );
