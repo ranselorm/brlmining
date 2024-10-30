@@ -66,18 +66,15 @@ const Navbar: React.FC = () => {
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div key={link.name} className="relative group">
-                  <Link
-                    to="#"
-                    className="hover:text-indigo-600 uppercase text-sm font-medium"
-                  >
+                  <Link to="#" className="uppercase text-sm font-medium">
                     {link.name}
                   </Link>
-                  <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
+                  <div className="absolute top-full left-0 bg-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100 invisible group-hover:visible z-10 w-max font-medium">
                     {link.dropdown.map((dropdownLink) => (
                       <Link
                         key={dropdownLink.name}
                         to={dropdownLink.path}
-                        className="block px-4 py-2 text-gray-600 hover:bg-indigo-600 hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray uppercase text-sm"
                       >
                         {dropdownLink.name}
                       </Link>

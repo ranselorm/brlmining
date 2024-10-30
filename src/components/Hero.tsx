@@ -7,6 +7,7 @@ interface HeroProps {
   title: string;
   description?: string;
   button?: boolean;
+  mainPage?: boolean;
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -14,6 +15,7 @@ const Hero: React.FC<HeroProps> = ({
   title,
   description,
   button,
+  mainPage,
 }) => {
   return (
     <section className="relative w-full h-[400px] md:h-[400px] overflow-hidden font-primary">
@@ -30,15 +32,19 @@ const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Hero Content */}
-      <div className="absolute inset-0 flex  items-center justify-start px-8 lg:px-24 text-left text-white">
-        <div className="w-full md:max-w-3xl">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight font-primary">
+      <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-24 text-left text-white">
+        <div className="w-full">
+          <h1
+            className={`${
+              mainPage
+                ? "text-2xl md:text-4xl lg:text-5xl md:max-w-3xl"
+                : "text-4xl md:mt-8"
+            } font-bold uppercase leading-tight font-primary`}
+          >
             {title}
           </h1>
           {description && (
-            <p className="text-lg mb-12 font-semibold">
-              {"slides[currentIndex].description"}
-            </p>
+            <p className="text-base leading-relaxed mt-12">{description}</p>
           )}
           {button && (
             <div className="space-x-4 flex items-center">
