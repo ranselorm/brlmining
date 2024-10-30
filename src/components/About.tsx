@@ -22,6 +22,7 @@ const About: React.FC = () => {
             potential to host a multimillion-ounce deposit."
           image="/images/project.jpg"
           isButton
+          path="/projects"
         />
         <AboutCard
           title="Corporate Governance"

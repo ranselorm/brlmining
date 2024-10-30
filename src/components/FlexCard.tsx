@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import React from "react";
 
-interface AboutCardProps {
+interface FlexCardProps {
   title: string;
   description: string;
   image: string;
@@ -11,19 +11,20 @@ interface AboutCardProps {
   path?: string;
 }
 
-const AboutCard: React.FC<AboutCardProps> = ({
+const FlexCard: React.FC<FlexCardProps> = ({
   title,
   description,
   image,
   isButton,
   isReverse,
+  path,
 }) => {
   return (
     <>
       <div
         className={`${
           isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
-        } container mx-auto flex flex-col gap-x-10 items-center lg:space-x-8`}
+        } flex flex-col gap-x-10 items-center justify-center lg:space-x-8`}
       >
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
           <img
@@ -34,11 +35,13 @@ const AboutCard: React.FC<AboutCardProps> = ({
         </div>
 
         <div className="w-full lg:w-1/2 text-left">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">{title}</h2>
-          <p className="text-base mb-4 leading-loose">{description}</p>
+          <Link to={`${path}`} className="text-3xl font-bold text-gray-800">
+            {title}
+          </Link>
+          <p className="text-base mt-6 mb-2 leading-loose">{description}</p>
           {isButton && (
-            <Link to="">
-              <Button text="View all projects" />
+            <Link to={`${path}`}>
+              <Button text="View project" />
             </Link>
           )}
         </div>
@@ -47,4 +50,4 @@ const AboutCard: React.FC<AboutCardProps> = ({
   );
 };
 
-export default AboutCard;
+export default FlexCard;
