@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, icon }) => {
   return (
-    <button className="bg-primary text-white text-xs px-6 py-3 rounded-full uppercase border-[1px] border-white mt-5 flex items-center gap-x-2 hover:bg-accent transition duration-150 w-max">
+    <button className="bg-primary text-white text-xs px-6 py-3 rounded-full uppercase border-[1px] border-white mt-5 inline-flex items-center gap-x-2 hover:bg-accent transition duration-150">
       {text}
       {icon && <Icon icon={icon} />}
     </button>
