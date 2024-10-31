@@ -42,7 +42,7 @@ const Info: React.FC = () => {
           </p>
           <Link
             to="/about"
-            className="inline-block mt-4 px-4 py-2 border-2 border-white text-white rounded-full hover:bg-white hover:text-primary transition"
+            className="inline-block mt-4 px-6 py-3 border border-white text-white rounded-full text-sm"
           >
             ABOUT US
           </Link>

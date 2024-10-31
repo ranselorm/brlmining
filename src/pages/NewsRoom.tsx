@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import Hero from "../components/Hero";
 import NewsCard from "../components/NewsCard";
 
 const NewsRoom = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section>
       <Hero title="Newsroom" background="/images/news-bg.jpg" />

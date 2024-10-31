@@ -1,11 +1,15 @@
 // src/pages/InvestorCentre.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Section from "../components/Section";
 import News from "../components/News";
 import Hero from "../components/Hero";
 
 const InvestorCentreOverview: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-deep mx-auto px-4 py-16 sm:px-6 md:px-24 font-primary">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">

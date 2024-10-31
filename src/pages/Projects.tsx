@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import FlexCard from "../components/FlexCard";
 import Hero from "../components/Hero";
 import News from "../components/News";
 
 const Projects = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="">
       <Hero
