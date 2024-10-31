@@ -41,7 +41,7 @@ const News: React.FC = () => {
         ))}
       </div>
       <Link to="/newsroom" className="text-center">
-        <Button text=" View All Newsroom Posts" />
+        <Button text="View All Newsroom Posts" />
       </Link>
     </section>
   );

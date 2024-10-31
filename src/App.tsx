@@ -29,7 +29,7 @@ function App() {
             <Route path="miminiska" element={<Miminiska />} />
             <Route path="keezhik" element={<Keezhik />} />
             <Route path="attwood" element={<Attwood />} />
-            <Route path="north-kimberly" element={<NorthKimberly />} />
+            <Route path="north-kimberley" element={<NorthKimberly />} />
           </Route>
         </Routes>
       </Layout>
