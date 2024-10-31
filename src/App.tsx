@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import InvestorCentre from "./pages/InvestorCentre";
 import NewsRoom from "./pages/NewsRoom";
 import Contact from "./pages/Contact";
+import ProjectRoutes from "./pages/ProjectRoutes";
 import GoldStandard from "./pages/GoldStandard";
 import Miminiska from "./pages/Miminiska";
 
@@ -17,11 +18,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/project/gold-standard" element={<GoldStandard />} />
-          <Route path="/project/miminiska" element={<Miminiska />} />
           <Route path="/investor-centre" element={<InvestorCentre />} />
           <Route path="/newsroom" element={<NewsRoom />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/project">
+            <Route path="gold-standard" element={<GoldStandard />} />
+            <Route path="miminiska" element={<Miminiska />} />
+          </Route>
         </Routes>
       </Layout>
     </>

@@ -35,12 +35,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   }, []);
 
   return (
-    <div className="w-full mx-auto font-primary bg-white md:w-4/6">
+    <div className="w-full mx-auto font-primary bg-white md:w-4/6 pb-4">
       <div className="bg-white mb-8 py-8 px-8 pt-16 pb-6">
         <Link to="/projects" className="text-primary text-sm">
           &lt;<span className="ml-2">ALL PROJECTS</span>
         </Link>
-        <h1 className="text-4xl font-bold mt-2">{title}</h1>
+        <h1 className="text-4xl font-semibold mt-2 uppercase">{title}</h1>
         <p className="text-lg mt-4">{location}</p>
       </div>
 
@@ -77,11 +77,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
       ))}
 
       {/* Navigation */}
-      <div className="flex justify-between mt-8">
-        <Link to={prevProject.path} className="text-indigo-600 hover:underline">
+      <div className="flex justify-between mt-16 px-6 text-sm">
+        <Link to={prevProject.path} className="text-primary">
           &lt; PREV: {prevProject.name}
         </Link>
-        <Link to={nextProject.path} className="text-indigo-600 hover:underline">
+        <Link to={nextProject.path} className="text-primary">
           NEXT: {nextProject.name} &gt;
         </Link>
       </div>
