@@ -1,11 +1,12 @@
 // src/components/ProjectDetails.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import "./ProjectDetails.css";
 
 type Section = {
   title: string;
-  content: string | string[] | { date: string; description: string }[];
+  content: string;
 };
 
 type ProjectDetailsProps = {
@@ -29,15 +30,18 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
     setOpenSection(openSection === sectionTitle ? "" : sectionTitle);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="w-full mx-auto px-4 sm:px-4 md:px-60 font-primary">
-      {/* Title and Location */}
+    <div className="w-full mx-auto font-primary bg-white md:w-4/6">
       <div className="bg-white mb-8 py-8 px-8 pt-16 pb-6">
         <Link to="/projects" className="text-primary text-sm">
           &lt;<span className="ml-2">ALL PROJECTS</span>
         </Link>
         <h1 className="text-4xl font-bold mt-2">{title}</h1>
-        <p className="text-lg text-gray-500">{location}</p>
+        <p className="text-lg mt-4">{location}</p>
       </div>
 
       {/* Sections */}
@@ -45,38 +49,30 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
         <div key={section.title} className="my-4">
           <button
             onClick={() => handleToggle(section.title)}
-            className="w-full flex justify-between items-center py-4 px-6 bg-gray-100 rounded shadow-sm text-lg font-semibold"
+            className={`w-full flex justify-between items-center px-6  ${
+              section.title === "Location" || section.title === "History"
+                ? "bg-gray py-5"
+                : "bg-none"
+            } rounded text-lg font-semibold`}
           >
             {section.title}
-            <span>{openSection === section.title ? "▼" : "▶"}</span>
-          </button>
-          <div
-            className={`toggle-content ${
-              openSection === section.title ? "open" : ""
-            }`}
-          >
-            {typeof section.content === "string" ? (
-              <p>{section.content}</p>
-            ) : Array.isArray(section.content) &&
-              typeof section.content[0] === "string" ? (
-              <ul className="list-disc pl-6">
-                {(section.content as string[]).map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+            {openSection === section.title ? (
+              <Icon icon="mdi:chevron-down" className="text-xl" />
             ) : (
-              <div>
-                {(
-                  section.content as { date: string; description: string }[]
-                ).map((item, index) => (
-                  <div key={index} className="my-2">
-                    <p className="font-semibold">{item.date}</p>
-                    <p>{item.description}</p>
-                  </div>
-                ))}
-              </div>
+              <Icon icon="mdi:chevron-right" className="text-xl" />
             )}
-          </div>
+          </button>
+          {openSection === section.title && (
+            <div
+              className={`p-6 ${
+                section.title === "Location" || section.title === "History"
+                  ? "bg-gray"
+                  : "bg-none"
+              }`}
+            >
+              <p className="leading-loose">{section.content}</p>
+            </div>
+          )}
         </div>
       ))}
 
