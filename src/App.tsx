@@ -7,6 +7,7 @@ import InvestorCentre from "./pages/InvestorCentre";
 import NewsRoom from "./pages/NewsRoom";
 import Contact from "./pages/Contact";
 import GoldStandard from "./pages/GoldStandard";
+import Miminiska from "./pages/Miminiska";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/gold-standard" element={<GoldStandard />} />
+          <Route path="/project/miminiska" element={<Miminiska />} />
           <Route path="/investor-centre" element={<InvestorCentre />} />
           <Route path="/newsroom" element={<NewsRoom />} />
           <Route path="/contact" element={<Contact />} />

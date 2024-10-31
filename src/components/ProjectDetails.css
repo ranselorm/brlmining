@@ -1,0 +1,12 @@
+/* src/components/ProjectDetails.css */
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-content.open {
+  max-height: 1000px; /* Set this to a maximum height that covers most content */
+  opacity: 1;
+}
