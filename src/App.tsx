@@ -9,6 +9,9 @@ import Contact from "./pages/Contact";
 import ProjectRoutes from "./pages/ProjectRoutes";
 import GoldStandard from "./pages/GoldStandard";
 import Miminiska from "./pages/Miminiska";
+import Keezhik from "./pages/Keezhik";
+import Attwood from "./pages/Attwood";
+import NorthKimberly from "./pages/NorthKimberly";
 
 function App() {
   return (
@@ -21,9 +24,12 @@ function App() {
           <Route path="/investor-centre" element={<InvestorCentre />} />
           <Route path="/newsroom" element={<NewsRoom />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/project">
+          <Route path="/project" element={<ProjectRoutes />}>
             <Route path="gold-standard" element={<GoldStandard />} />
             <Route path="miminiska" element={<Miminiska />} />
+            <Route path="keezhik" element={<Keezhik />} />
+            <Route path="attwood" element={<Attwood />} />
+            <Route path="north-kimberly" element={<NorthKimberly />} />
           </Route>
         </Routes>
       </Layout>

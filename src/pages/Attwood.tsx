@@ -1,10 +1,12 @@
+// src/pages/Attwood.tsx
+import React from "react";
 import ProjectDetails from "../components/ProjectDetails";
 
-const Miminiska = () => {
+const Attwood: React.FC = () => {
   return (
     <>
       <ProjectDetails
-        title="Miminiska"
+        title="Attwood"
         location="Northwestern Ontario, Canada"
         sections={[
           {
@@ -28,14 +30,14 @@ const Miminiska = () => {
               "The Gold Standard property lies within the Archean Manitou – Stormy Lakes greenstone belt, an 80 km by 20 km assemblage of northeast-trending mafic, intermediate, and felsic metavolcanic rocks, related intrusive rocks, and metasediments which have been intruded by Archean granitoid stocks and batholiths. Structurally, the belt is dominated by the northeast-striking Manitou Straits fault (MSF). The Gold Standard property is located northwest of the MSF and is underlain by intermediate to mafic volcanic flows and pyroclastic rocks of the Grant Lake group.",
           },
         ]}
-        prevProject={{
-          name: "North Kimberley Diamond Project",
+        prevProject={{ name: "Keezhik", path: "/project/keezhik" }}
+        nextProject={{
+          name: "North Kimberly Diamond Project",
           path: "/project/north-kimberley",
         }}
-        nextProject={{ name: "Gold Standard", path: "/project/gold-standard" }}
       />
     </>
   );
 };
 
-export default Miminiska;
+export default Attwood;

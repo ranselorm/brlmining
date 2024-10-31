@@ -17,6 +17,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
   image,
   isButton,
   isReverse,
+  path,
 }) => {
   return (
     <>
@@ -37,7 +38,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
           <h2 className="text-3xl font-bold text-gray-800 mb-4">{title}</h2>
           <p className="text-base mb-4 leading-loose">{description}</p>
           {isButton && (
-            <Link to="">
+            <Link to={`${path}`}>
               <Button text="View all projects" />
             </Link>
           )}

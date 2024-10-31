@@ -40,7 +40,7 @@ const Projects = () => {
             image="/images/map3.jpg"
             isButton
             isReverse
-            path="/project/artwood"
+            path="/project/attwood"
           />
         </div>
       </div>
