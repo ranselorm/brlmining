@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 import React from "react";
 import Button from "./Button";
 
@@ -28,10 +27,8 @@ const Hero: React.FC<HeroProps> = ({
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        {/* Overlay */}
       </div>
 
-      {/* Hero Content */}
       <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-24 text-left text-white">
         <div className="w-full">
           <h1
@@ -47,10 +44,10 @@ const Hero: React.FC<HeroProps> = ({
             <p className="text-base leading-relaxed mt-12">{description}</p>
           )}
           {button && (
-            <div className="space-x-4 flex items-center">
-              <Button text="Get to know us" />
+            <div className="md:space-x-4 flex md:items-center flex-col md:flex-row md:mt-10">
+              <Button text="Get to know us" path="/about" />
               <Button
-                text="Coporate presentation"
+                text="Corporate presentation"
                 icon="material-symbols-light:download-sharp"
               />
             </div>
