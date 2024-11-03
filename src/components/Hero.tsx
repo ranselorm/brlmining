@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({
             className={`${
               mainPage
                 ? "text-2xl md:text-4xl lg:text-5xl md:max-w-3xl"
-                : "text-4xl md:mt-8"
+                : "text-xl md:text-4xl md:mt-8"
             } font-bold uppercase leading-tight font-primary`}
           >
             {title}

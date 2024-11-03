@@ -12,6 +12,7 @@ import Miminiska from "./pages/Miminiska";
 import Keezhik from "./pages/Keezhik";
 import Attwood from "./pages/Attwood";
 import NorthKimberly from "./pages/NorthKimberly";
+import Management from "./pages/Management";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/management" element={<Management />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/investor-centre" element={<InvestorCentre />} />
           <Route path="/newsroom" element={<NewsRoom />} />

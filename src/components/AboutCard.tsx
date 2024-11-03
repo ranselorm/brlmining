@@ -35,7 +35,9 @@ const AboutCard: React.FC<AboutCardProps> = ({
         </div>
 
         <div className="w-full lg:w-1/2 text-left">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">{title}</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">
+            {title}
+          </h2>
           <p className="text-base mb-4 leading-loose">{description}</p>
           {isButton && (
             <Link to={`${path}`}>

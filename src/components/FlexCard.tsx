@@ -35,7 +35,7 @@ const FlexCard: React.FC<FlexCardProps> = ({
         </div>
 
         <div className="w-full lg:w-1/2 text-left">
-          <Link to={`${path}`} className="text-3xl font-bold text-gray-800">
+          <Link to={`${path}`} className="text-xl md:text-2xl font-bold">
             {title}
           </Link>
           <p className="text-base mt-6 mb-2 leading-loose">{description}</p>

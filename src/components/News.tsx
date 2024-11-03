@@ -28,7 +28,7 @@ const newsData = [
 const News: React.FC = () => {
   return (
     <section className="py-8 w-full mx-auto px-4 sm:px-4 md:px-24 font-primary">
-      <h2 className="text-2xl font-bold mb-6">Latest News</h2>
+      <h2 className="text-xl md:text-2xl font-bold mb-6">Latest News</h2>
       <div className="flex gap-6 flex-col md:flex-row">
         {newsData.map((newsItem, index) => (
           <NewsCard

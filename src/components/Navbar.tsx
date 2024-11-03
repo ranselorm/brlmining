@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
@@ -59,7 +58,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-gray py-2 font-primary">
       <div className="w-full mx-auto px-4 sm:px-6 md:px-24 py-3 flex justify-between items-center">
         <Link to="/">
-          <img src={Logo} width={200} alt="Logo" />
+          <img src={Logo} alt="Logo" className="w-[140px] md:w-[200px]" />
         </Link>
 
         {/* Desktop Menu */}
@@ -93,7 +92,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="font-medium uppercase text-sm hover:text-indigo-600"
+                  className="font-medium uppercase text-sm"
                 >
                   {link.name}
                 </Link>
@@ -111,21 +110,24 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Full-Screen Menu with Overlay and Slide-In Effect */}
       {mobileMenuOpen && (
         <>
-          {/* Overlay with Blur Effect */}
           <div className="fixed inset-0 z-40 bg-black bg-opacity-70 backdrop-blur-md overlay" />
 
           {/* Sidebar Menu */}
           <div
-            className={`fixed top-0 right-0 z-50 h-full w-7/12 bg-black text-white p-5 transform transition-transform duration-300 ${
+            className={`fixed top-0 right-0 z-50 h-full w-10/12 py-6 bg-black text-white p-5 transform transition-transform duration-300 ${
               mobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <div className="flex justify-between items-center mb-8">
               <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                <img src={Logo} width={150} alt="Logo" className="text-white" />
+                <img
+                  src="/images/logo-white.png"
+                  width={150}
+                  alt="Logo"
+                  className="text-white"
+                />
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -135,20 +137,19 @@ const Navbar: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 mb-4">
               {navLinks.map((link) =>
                 link.dropdown ? (
-                  <div
-                    key={link.name}
-                    className="pb-4 border-b border-gray-700"
-                  >
-                    <p className="font-semibold text-lg">{link.name}</p>
-                    <div className="pl-4 space-y-2 mt-2">
+                  <div key={link.name} className="">
+                    <p className="text-lg uppercase border-b py-2">
+                      {link.name}
+                    </p>
+                    <div className="space-y-2 mt-2">
                       {link.dropdown.map((dropdownLink) => (
                         <Link
                           key={dropdownLink.name}
                           to={dropdownLink.path}
-                          className="block text-gray-400 hover:text-white"
+                          className="block hover:text-white"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {dropdownLink.name}
@@ -160,7 +161,7 @@ const Navbar: React.FC = () => {
                   <Link
                     key={link.name}
                     to={link.path}
-                    className="block font-semibold text-lg border-b border-gray-700 pb-4"
+                    className="block text-lg border-b py-2 uppercase"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -168,6 +169,7 @@ const Navbar: React.FC = () => {
                 )
               )}
             </div>
+            <Socials color />
           </div>
         </>
       )}
