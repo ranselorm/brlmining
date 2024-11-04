@@ -39,11 +39,7 @@ const FlexCard: React.FC<FlexCardProps> = ({
             {title}
           </Link>
           <p className="text-base mt-6 mb-2 leading-loose">{description}</p>
-          {isButton && (
-            <Link to={`${path}`}>
-              <Button text="View project" />
-            </Link>
-          )}
+          {isButton && <Button text="View project" path={path} />}
         </div>
       </div>
     </>

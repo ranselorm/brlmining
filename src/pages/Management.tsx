@@ -52,7 +52,7 @@ const Management = () => {
         description="Experienced, technically-driven & fiscally prudent management applying a methodical approach to exploration using modern techniques and up-to-date deposit models."
         background="/images/management-bg.jpg"
       />
-      <div className="px-4 md:px-24 bg-deep font-primary">
+      <div className="px-4 md:px-24 bg-deep font-primary pt-12">
         <h1 className="text-xl md:text-2xl font-bold mb-8">
           Company Management
         </h1>

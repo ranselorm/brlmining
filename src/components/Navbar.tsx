@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
               mobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-12">
               <Link to="/" onClick={() => setMobileMenuOpen(false)}>
                 <img
                   src="/images/logo-white.png"
@@ -141,9 +141,13 @@ const Navbar: React.FC = () => {
               {navLinks.map((link) =>
                 link.dropdown ? (
                   <div key={link.name} className="">
-                    <p className="text-lg uppercase border-b py-2">
+                    <Link
+                      to={`${link.path}`}
+                      className="text-lg uppercase border-b py-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       {link.name}
-                    </p>
+                    </Link>
                     <div className="space-y-2 mt-2">
                       {link.dropdown.map((dropdownLink) => (
                         <Link
