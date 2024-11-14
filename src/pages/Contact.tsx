@@ -118,10 +118,10 @@ const Contact: React.FC = () => {
               <span className="font-semibold">Email</span>
               <br />
               <a
-                href="mailto:info@stormex.com"
+                href="mailto:info@BRL Miningex.com"
                 className="text-indigo-600 hover:underline"
               >
-                info@stormex.com
+                info@BRL Miningex.com
               </a>
             </p>
           </div>

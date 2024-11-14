@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           <div className="mb-6">
             <img
               src="/images/logo-white.png"
-              alt="Storm Exploration"
+              alt="BRL Mining Exploration"
               className="h-12"
             />
           </div>
@@ -56,10 +56,10 @@ const Footer: React.FC = () => {
             (604) 506 2804
             <br />
             <a
-              href="mailto:info@stormex.ca"
+              href="mailto:info@BRL Miningex.ca"
               className="text-gray-300 hover:text-white transition"
             >
-              info@stormex.ca
+              info@BRL Miningex.ca
             </a>
           </address>
         </div>
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
       <div className="border-t border-gray-700 mt-8 pt-4">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Storm Exploration Inc. All rights reserved.{" "}
+            © 2024 BRL Mining Exploration Inc. All rights reserved.{" "}
             <Link to="/terms" className="hover:text-white">
               Terms of Service
             </Link>{" "}

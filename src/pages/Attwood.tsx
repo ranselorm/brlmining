@@ -27,7 +27,7 @@ const Attwood: React.FC = () => {
           {
             title: "Technical Details",
             content:
-              "The Gold Standard property lies within the Archean Manitou – Stormy Lakes greenstone belt, an 80 km by 20 km assemblage of northeast-trending mafic, intermediate, and felsic metavolcanic rocks, related intrusive rocks, and metasediments which have been intruded by Archean granitoid stocks and batholiths. Structurally, the belt is dominated by the northeast-striking Manitou Straits fault (MSF). The Gold Standard property is located northwest of the MSF and is underlain by intermediate to mafic volcanic flows and pyroclastic rocks of the Grant Lake group.",
+              "The Gold Standard property lies within the Archean Manitou – BRL Miningy Lakes greenstone belt, an 80 km by 20 km assemblage of northeast-trending mafic, intermediate, and felsic metavolcanic rocks, related intrusive rocks, and metasediments which have been intruded by Archean granitoid stocks and batholiths. Structurally, the belt is dominated by the northeast-striking Manitou Straits fault (MSF). The Gold Standard property is located northwest of the MSF and is underlain by intermediate to mafic volcanic flows and pyroclastic rocks of the Grant Lake group.",
           },
         ]}
         prevProject={{ name: "Keezhik", path: "/project/keezhik" }}

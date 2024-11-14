@@ -28,7 +28,6 @@ const Hero: React.FC<HeroProps> = ({
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-
       <div className="absolute inset-0 flex items-center justify-start px-8 lg:px-24 text-left text-white">
         <div className="w-full">
           <h1
@@ -49,6 +48,7 @@ const Hero: React.FC<HeroProps> = ({
               <Button
                 text="Corporate presentation"
                 icon="material-symbols-light:download-sharp"
+                path="/investor-centre"
               />
             </div>
           )}

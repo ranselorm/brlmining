@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Button from "./Button";
 import React from "react";
 
@@ -17,7 +16,6 @@ const AboutCard: React.FC<AboutCardProps> = ({
   image,
   isButton,
   isReverse,
-  path,
 }) => {
   return (
     <>
@@ -39,11 +37,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
             {title}
           </h2>
           <p className="text-base mb-4 leading-loose">{description}</p>
-          {isButton && (
-            <Link to={`${path}`}>
-              <Button text="View all projects" />
-            </Link>
-          )}
+          {isButton && <Button text="View all projects" path="/projects" />}
         </div>
       </div>
     </>
