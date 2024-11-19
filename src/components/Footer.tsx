@@ -43,22 +43,23 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Location</h3>
           <address className="not-italic text-gray-300">
-            Suite 1480, 885 West
-            <br />
-            Georgia Street
-            <br />
-            Vancouver, BC, Canada
-            <br />
-            V6C3E8
+            No. 4 Apple Street
             <br />
             <br />
-            (604) 506 2804
+            East Legon
+            <br />
+            <br />
+            Accra, Ghana
+            <br />
+            <br />
+            (+233) 302-543-667
+            <br />
             <br />
             <a
               href="mailto:info@BRL Miningex.ca"
               className="text-gray-300 hover:text-white transition"
             >
-              info@BRL Miningex.ca
+              info@BRLmining.com
             </a>
           </address>
         </div>
