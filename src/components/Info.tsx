@@ -8,7 +8,7 @@ const Info: React.FC = () => {
       className="w-full bg-cover bg-center py-8 font-primary"
       style={{ backgroundImage: "url('/images/world.jpg')" }}
     >
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4 md:py-16 md:px-24">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4 md:py-16 px-4 md:px-24">
         {/* Investor Centre Card */}
         <div className="bg-primary text-white p-6 md:w-1/2 rounded">
           <div className="flex items-center mb-4">

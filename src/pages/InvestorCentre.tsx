@@ -79,7 +79,7 @@ const InvestorCentre: React.FC = () => {
   return (
     <div className="">
       <Hero title="Investor Centre" background="/images/report-bg.jpg" />
-      <div className="flex flex-col md:flex-row gap-x-4 mx-auto px-4 sm:px-6 md:px-24 md:py-16 py-6">
+      <div className="flex flex-col md:flex-row gap-x-4 container mx-auto px-4 sm:px-6 md:px-24 md:py-16 py-6">
         <Section title="Reports" viewAllLink="/all-reports" items={reports} />
         <Section
           title="Presentations"

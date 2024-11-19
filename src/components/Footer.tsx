@@ -25,7 +25,6 @@ const Footer: React.FC = () => {
               className="h-12"
             />
           </div>
-          {/* <h3 className="text-lg font-semibold mb-4">Important Links</h3> */}
           <ul className="space-y-2">
             {importantLinks.map((link, index) => (
               <li key={index}>
